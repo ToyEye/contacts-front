@@ -1,6 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
-import { ContainerStyled, FormStyled, FormSpanStyled } from "./LoginStyled";
+import {
+  ContainerStyled,
+  FormStyled,
+  FormSpanStyled,
+  LabelStyled,
+} from "../FormsComponentsStyled";
+import { loginSchema } from "../../../models";
+
 interface FormValues {
   email: string;
   password: string;
@@ -19,6 +26,8 @@ const Login: React.FC = () => {
   const formik = useFormik({
     initialValues,
     initialErrors: initialValues,
+    validationSchema: loginSchema,
+    validateOnBlur: true,
     onSubmit,
   });
 
@@ -26,28 +35,32 @@ const Login: React.FC = () => {
     <ContainerStyled>
       <h1>Login</h1>
       <FormStyled onSubmit={formik.handleSubmit}>
-        <label>
+        <LabelStyled>
           <FormSpanStyled>Email adress</FormSpanStyled>
           <input
             id="email"
             name="email"
             type="email"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
             placeholder="Enter your email"
           />
-        </label>
-        <label>
+          <p>{formik.touched.email && formik.errors.email}</p>
+        </LabelStyled>
+        <LabelStyled>
           <FormSpanStyled>Password</FormSpanStyled>
           <input
             id="password"
             name="password"
             type="password"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.password}
             placeholder="Enter your password"
           />
-        </label>
+          <p>{formik.touched.password && formik.errors.password}</p>
+        </LabelStyled>
         <button type="submit">Submit</button>
       </FormStyled>
     </ContainerStyled>

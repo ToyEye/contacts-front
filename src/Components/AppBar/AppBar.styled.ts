@@ -1,9 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 // import media from "../../helpers/mediaHelper";
 
 const Container = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   height: 50px;
-  background-color: ${(props) => props.theme.colors.mainBg};
+  background-color: ${props => props.theme.colors.mainBg};
   width: 100%;
   color: white;
   padding: 0 15px;

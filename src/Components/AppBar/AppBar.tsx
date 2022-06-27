@@ -1,11 +1,12 @@
-import React from "react";
-import Navigation from "../Navigation";
-import { Container } from "./AppBar.styled";
+import React from 'react';
+import { AuthBar, Navigation } from '../Navigation';
+import { Container } from './AppBar.styled';
 
 const AppBar: React.FC = () => {
   return (
     <Container>
       <Navigation />
+      <AuthBar />
     </Container>
   );
 };
