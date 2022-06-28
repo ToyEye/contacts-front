@@ -5,7 +5,7 @@ import {
   FormStyled,
   LabelStyled,
   FormSpanStyled,
-} from '../FormsComponentsStyled';
+} from '../../reusableComponents/FormsComponentsStyled';
 import { registerSchema } from '../../../models';
 
 interface FormValues {

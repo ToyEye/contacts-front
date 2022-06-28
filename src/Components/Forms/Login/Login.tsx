@@ -1,12 +1,12 @@
-import React from "react";
-import { useFormik } from "formik";
+import React from 'react';
+import { useFormik } from 'formik';
 import {
   ContainerStyled,
   FormStyled,
   FormSpanStyled,
   LabelStyled,
-} from "../FormsComponentsStyled";
-import { loginSchema } from "../../../models";
+} from '../../reusableComponents/FormsComponentsStyled';
+import { loginSchema } from '../../../models';
 
 interface FormValues {
   email: string;
@@ -14,13 +14,13 @@ interface FormValues {
 }
 
 const initialValues: FormValues = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 const Login: React.FC = () => {
   const onSubmit = () => {
-    console.log("click");
+    console.log('click');
   };
 
   const formik = useFormik({
